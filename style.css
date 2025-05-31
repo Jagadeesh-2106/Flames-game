@@ -1,0 +1,123 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;             /* 1. Makes the body a flex container */
+    justify-content: center;   /* 2. Centers its direct children horizontally */
+    align-items: center;       /* 3. Centers its direct children vertically */
+    min-height: 100vh;         /* 4. Ensures the body takes up the full viewport height */
+    margin: 20px;                 /* Removes default body margin */
+    background-color: #e0f2f7;
+    color: #333;
+    transition: background-color 0.5s ease-in-out;
+    overflow: hidden;
+    padding: 10px;
+
+}
+
+.container {
+    background-color: #ffffff; /* Pure white for contrast */
+    padding: 35px;
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    text-align: center;
+    width: 90%;
+    max-width: 350px; /* Slightly wider */
+    position: relative; /* For potential absolute positioning of elements inside */
+    z-index: 1; /* Ensure container is above background elements */
+}
+
+h1 {
+    color: #7eb3ec; /* A nice blue for the heading */
+    margin-bottom: 25px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+.input-group {
+    margin-bottom: 20px; /* More space */
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* More space */
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1em;
+}
+
+input[type="text"] {
+    width: calc(100% - 24px); /* Adjust for padding and border */
+    padding: 12px; /* More padding */
+    border: 1px solid #cce7ed; /* Lighter border */
+    border-radius: 6px; /* Slightly more rounded */
+    font-size: 17px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff; /* Highlight on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    background-color:#7eb3ec ; /* A vibrant green for the button #54d372 */
+    color: white;
+    padding: 14px 25px; /* More padding */
+    border: none;
+    border-radius: 8px; /* More rounded */
+    cursor: pointer;
+    font-size: 19px; /* Larger font */
+    font-weight: bold;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for subtle click effect */
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift button slightly */
+}
+
+button:active {
+    transform: translateY(0); /* Push button down on click */
+}
+
+.result {
+    margin-top: 35px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e9f7ef; /* Light green background for result */
+    font-size: 22px; /* Larger font */
+    font-weight: bold;
+    color: #007bff; /* Use primary blue for result text */
+    min-height: 60px;
+    display: flex;
+    flex-direction: column; /* Allow content to stack */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between text and GIF */
+    overflow: hidden; /* Hide overflowing parts of GIF if it's too big */
+}
+
+.result-gif {
+    max-width: 100%; /* Ensure GIF fits within result box */
+    height: auto;
+    border-radius: 8px; /* Match container border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out; /* Simple fade-in animation for GIF */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Specific colors for results (optional, can be controlled by JS as well) */
+.result.friends { color: #ffc107; } /* Yellow */
+.result.love { color: #dc3545; }    /* Red */
+.result.affection { color: #fd7e14; } /* Orange */
+.result.marriage { color: #6f42c1; } /* Purple */
+.result.enemy { color: #6c757d; }   /* Grey */
+.result.siblings { color: #17a2b8; } /* Teal */
+
+.error-message {
+    color: #dc3545 !important; /* Red for error messages */
+}
